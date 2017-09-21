@@ -3,32 +3,33 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {Col, Button} from 'react-bootstrap'
 
-export class MainOffering extends React.Component{
+export class MainOffer extends React.Component{
     render() {
-        const title = Object.keys(this.props.productData);
-        if(this.props.productData[title]){
+        let title = Object.keys(this.props.productOffer);
+        let productOffer = this.props.productOffer[title];
+        if(productOffer){
             return (
                 <Col xs={12}>
-                    <Col md={3} sm={4} xs={12}>
+                    <Col md={6} sm={7} xs={12}>
                         <p>
                             <img 
-                              src={this.productData[title].image.replace("{size}", "200x150")}
+                              src={productOffer.image.replace("{size}", "400x400")}
                               alt={title}/>
                         </p>
                     </Col>
-                    <Col md={9} sm={8} xs={12}>
-                        <Link to={"/productitem/" + this.props.productData[title].SKU}>
+                    <Col md={6} sm={5} xs={12}>
+                        <Link to={"/productitem/" + productOffer.SKU}>
                             <h4>{title}</h4>
                         </Link>
                         
                         <p>{/*possivel erro arui*/}
-                            {this.props.productData[title].description}
+                            {this.props.productOffer.description}
                         </p>
                         
                         <p>
-                            {this.props.productData[title].price}
-                            {" "}
-                            {this.props.productData[title].savings}
+                            {productOffer.price}
+                            {" - "}
+                            {productOffer.savings}
                         </p>
                         
                         <p>
@@ -45,6 +46,6 @@ export class MainOffering extends React.Component{
     }
 }
 
-MainOffering.propTypes = {
-    productData: PropTypes.Object
+MainOffer.propTypes = {
+    productOffer: PropTypes.Object
 }

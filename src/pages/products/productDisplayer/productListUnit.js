@@ -3,32 +3,33 @@ import PropTypes from 'prop-types';
 import {Col, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-export class RibbonOffering extends React.Component {
+export class ProductListUnit extends React.Component {
     render(){
-        const title = Object.keys(this.props.productData);
-        if(this.props.productData[title]){
+        let title = Object.keys(this.props.product);
+        let product = this.props.product[title];
+        if(product){
             return (
                 <Col md={4} sm={4} xs={12}>
                     <Col xs={12}>
                         <p>
                             <img
-                              src={this.productData[title].image.replace("{size}", "200x80")}
+                              src={product.image.replace("{size}", "200x200")}
                               alt={title}/>
                         </p>
                     </Col>
                     <Col xs={12}>
-                        <Link to={"/productitem/" + this.props.productData[title].SKU}>
-                            <h4>{title}</h4>
+                        <Link to={"/productitem/" + product.SKU}>
+                            <h3>{title}</h3>
                         </Link>
                         
                         <p>{/*possivel erro arui*/}
-                            {this.props.productData[title].description}
+                            {product.description}
                         </p>
                         
                         <p>
-                            {this.props.productData[title].price}
-                            {" "}
-                            {this.props.productData[title].savings}
+                            {product.price}
+                            {" - "}
+                            {product.savings}
                         </p>
                         
                         <p>
@@ -44,6 +45,6 @@ export class RibbonOffering extends React.Component {
     }
 }
 
-RibbonOffering.propTypes = {
-    productData: PropTypes.Object
+ProductListUnit.propTypes = {
+    product: PropTypes.Object
 }
