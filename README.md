@@ -12,14 +12,14 @@ This project was bootsraped with Create-React-App and Cloud9 IDE.
 
 ## Folder Structure
 
-* root/ 
-  * public/ 
-    * index.html
-    * manifest.json
-  * src/
-    * components/
-      * footer.js
-      * menu.js
+
+* public/ 
+  * index.html
+  * manifest.json
+* src/
+  * components/
+    * footer.js
+    * menu.js
   * firebase/
     * firebase.js
   * pages/
