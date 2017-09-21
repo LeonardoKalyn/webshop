@@ -37,6 +37,11 @@ This project was bootsraped with Create-React-App and Cloud9 IDE.
     * productItem.js
   *  scraped/
       * //dead code
+  * index.css
+  * index.js
+  * layout.js
+  * routes.js
+  * registerServiceWorker.js
   * package.json
   * README.md
     
