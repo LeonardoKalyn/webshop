@@ -31,12 +31,12 @@ This project was bootsraped with Create-React-App and Cloud9 IDE.
           * productListUnit.js
         * productLoader.js
         * products.js
-   * checkout.js
-     * home.js
-     * productInfo.js
-     * productItem.js
-   *  scraped/
+    * checkout.js
+    * home.js
+    * productInfo.js
+    * productItem.js
+  *  scraped/
       * //dead code
-   * package.json
-   * README.md
+  * package.json
+  * README.md
     
